@@ -1,0 +1,36 @@
+﻿@page
+@model BookReservation.Pages.BookCategoryModel
+@{
+}
+
+<h5>Books Categories</h5>
+<div class="col-md-7 container">
+    <table class="table table-responsive table-bordered table-striped">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Creation Date</td>
+            <td>Operation</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.BookCategories)
+        {
+         <tr>
+            <th>@item.Id</th>
+            <th>@item.Name</th>
+            <th>@item.CreationDate</th>
+            <th>
+                <a asp-page="./EditBookCategory" asp-route-id="@item.Id" class="btn btn-warning" style="display:block">Edit</a>
+            </th>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-page="./CreateBookCategory" class="btn btn-success">Create new category</a>
+
+</div>
+
+

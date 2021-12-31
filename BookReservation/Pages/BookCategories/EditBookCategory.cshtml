@@ -1,0 +1,15 @@
+﻿@page
+@model BookReservation.Pages.EditBookCategoryModel
+@{
+}
+
+<form method="post">
+    <div class="row col-6 form-group">
+        <label asp-for=@Model.Command.Name >Category name</label>
+        <input class="form-control" asp-for="@Model.Command.Name" type="text" />
+        <input hidden asp-for="@Model.Command.Id" value="@Model.Command.Id" />
+    </div>
+    <div class="col-md-4">
+        <button class="btn btn-success" type="submit">Submit Edition!</button>
+    </div>
+</form>
